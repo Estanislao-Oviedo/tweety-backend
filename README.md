@@ -13,17 +13,17 @@ Imgur API is used to store images.
 
 ## Environmental variables needed to set up
 MONGODB_URI=database link  
-ORIGIN_URL=frontend domain for CORS origin
+ORIGIN_URL=frontend domain for CORS origin  
 IMGUR_ACCESS_TOKEN=token needeed to access the imgur API for image upload  
 PRIVATE_KEY=key used to encrypt and sign a jwt token  
 PUBLIC_KEY=key used to decrypt a JWT token  
-PORT=port used for express server
+PORT=port used for express server  
 
 ## General info
 Served created with express.  
 Requests handle multipart/form-data using formidable  
 Only requests for user private information need authorization  
-API temporaly hosted on http://tweety-backend.herokuapp.com/
+API temporally hosted on http://tweety-backend.herokuapp.com/
 
 ## RESPONSES
 
@@ -120,6 +120,6 @@ API temporaly hosted on http://tweety-backend.herokuapp.com/
 
     Needs authorization
     Given you are the author of the post it deletes it if it has no replies,  
-    otherwise it adds a deleted flag and changed it's content to deleted.  
-    If you delete a deleted post reply with no other replies it also deletes the post your you replied to
+    otherwise it adds a deleted flag and changes it's content to deleted.  
+    If you delete a deleted post reply with no other replies it also deletes the post you replied to
     Returns the deleted post
