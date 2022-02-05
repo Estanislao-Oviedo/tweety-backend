@@ -4,8 +4,8 @@
 ## Database
 Hosted on MongoDB.
 
-## Authorization
-Authorization is implemented with Passport JWT.  
+## Authentication
+Authentication is implemented with Passport JWT.  
 Passwords are encrypted with bcrypt. Upon login or signup a JWT token is issue using RS256 algorythm and send to the client via HTTPOnly Cookie.
 
 ## External APIs
@@ -22,7 +22,7 @@ PORT=port used for express server
 ## General info
 Served created with express.  
 Requests handle multipart/form-data using formidable  
-Only requests for user private information need authorization  
+Only requests for user private information need authentication  
 API temporally hosted on http://tweety-backend.herokuapp.com/
 
 ## RESPONSES
@@ -102,7 +102,7 @@ Returns an array of users who's link match the search criteria
 `PUT /user/:link/follow`
 
 
-##### Needs authorization  
+##### Needs authentication  
 Follows or unfollows a user
 
 ---
@@ -110,7 +110,7 @@ Follows or unfollows a user
 `PUT /user/update`
 
 
-##### Needs authorization
+##### Needs authentication
 Updates your profile's username, header image, profile picture or and bio and returns your new edited user
 
 ---
@@ -120,7 +120,7 @@ Updates your profile's username, header image, profile picture or and bio and re
 `GET /feed/:page`
 
 
-##### Needs authorization
+##### Needs authentication
 Returns an array of posts of the users you followed with pagination
 
 ---
@@ -141,19 +141,19 @@ The id post replied to 1 and 1 replied to 2. Returns [2, 1]
 `POST /post/`
 
 
-##### Needs authorization
+##### Needs authentication
 Create a new post or reply created by your user
 
 ---
 
 `PUT /:id/like`
 
-##### Needs authorization
+##### Needs authentication
 Likes a post and returns an array with all the current likes
 
 ---
 
 `DELETE /:id`
 
-##### Needs authorization
+##### Needs authentication
 Given you are the author of the post it deletes it if it has no replies, otherwise it adds a deleted flag and changes it's content to deleted. If you delete a deleted post reply with no other replies it also deletes the post you replied to. Returns the deleted post
