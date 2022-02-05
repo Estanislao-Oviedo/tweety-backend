@@ -22,8 +22,8 @@ PORT=port used for express server
 ## General info
 Served created with express.  
 Requests handle multipart/form-data using formidable  
-Only requests for user private information need authorization
-API temporali hosted on http://tweety-backend.herokuapp.com/
+Only requests for user private information need authorization  
+API temporaly hosted on http://tweety-backend.herokuapp.com/
 
 ## RESPONSES
 
