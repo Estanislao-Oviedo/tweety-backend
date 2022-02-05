@@ -38,88 +38,122 @@ API temporally hosted on http://tweety-backend.herokuapp.com/
 
 `POST /auth/signup/`
 
-    Creates a new user, sets the JWT cookie and return the new user
+Creates a new user, sets the JWT cookie and return the new user
+
+---
     
 `POST /auth/login/`
 
-    Sets the JWT cookie and return the new user
+Sets the JWT cookie and return the new user
+
+---
 
 `POST /auth/logout/`
 
-    Erases the JWT token cookie on the client
+Erases the JWT token cookie on the client
+
+---
 
 `GET /auth/checkifloggedin/`
 
-    Returns false or the logged user
+Returns false or the logged user
 
-
+---
 
 ## User related requests
 
 `GET /user/:link`
 
-    Returns the user if the link exists
+Returns the user if the link exists
+
+---
+  
 
 `GET /user/:link/posts`
 
-    Returns an array of the user posts if the link exists
+Returns an array of the user posts if the link exists
+
+---
   
 `GET /user/:link/replies`
 
-    Returns an array of posts with the user replies if the link exists
+Returns an array of posts with the user replies if the link exists
+
+---
 
 `GET /user/:link/followers`
 
-    Returns an array with the user's followers if the link exists
+Returns an array with the user's followers if the link exists
+
+---
 
 `GET /user/:link/follows`
 
-    Returns an array with the user's follows if the link exists
+Returns an array with the user's follows if the link exists
+
+---
 
 `GET /user/:search/search`
 
-    Returns an array of users who's link match the search criteria
+Returns an array of users who's link match the search criteria
+
+---
 
 `PUT /user/:link/follow`
 
-    Needs authorization  
-    Follows or unfollows a user
+
+##### Needs authorization  
+Follows or unfollows a user
+
+---
 
 `PUT /user/update`
 
-    Needs authorization
-    Updates your profile's username, header image, profile picture or and bio and returns your new edited user
+
+##### Needs authorization
+Updates your profile's username, header image, profile picture or and bio and returns your new edited user
+
+---
 
 ## Post related requests
 
 `GET /feed/:page`
 
-    Needs authorization
-    Returns an array of posts of the users you followed with pagination
+
+##### Needs authorization
+Returns an array of posts of the users you followed with pagination
+
+---
 
 `GET /post/:id`
 
-    Returns the posts if the id exists
+Returns the posts if the id exists
+
+---
 
 `GET /post/:id/parentreplies`
 
-    Returns an array of posts of the path to your posts  
-    The id post replied to 1 and 1 replied to 2. Returns [2, 1]
+Returns an array of posts of the path to your posts  
+The id post replied to 1 and 1 replied to 2. Returns [2, 1]
+
+---
 
 `POST /post/`
 
-    Needs authorization
-    Create a new post or reply created by your user
+
+##### Needs authorization
+Create a new post or reply created by your user
+
+---
 
 `PUT /:id/like`
 
-    Needs authorization
-    Likes a post and returns an array with all the current likes
+##### Needs authorization
+Likes a post and returns an array with all the current likes
+
+---
 
 `DELETE /:id`
 
-    Needs authorization
-    Given you are the author of the post it deletes it if it has no replies,  
-    otherwise it adds a deleted flag and changes it's content to deleted.  
-    If you delete a deleted post reply with no other replies it also deletes the post you replied to
-    Returns the deleted post
+##### Needs authorization
+Given you are the author of the post it deletes it if it has no replies, otherwise it adds a deleted flag and changes it's content to deleted. If you delete a deleted post reply with no other replies it also deletes the post you replied to. Returns the deleted post
