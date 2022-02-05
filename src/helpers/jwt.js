@@ -22,5 +22,4 @@ module.exports.issueJWT = (user) => {
       expires: expiresIn,
     }
     return signedToken;
-    return `JWT ${signedToken}`;
 };
