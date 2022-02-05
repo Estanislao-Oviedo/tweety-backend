@@ -85,22 +85,6 @@ exports.auth_logOut = (req,res,next) => {
     return res.status(200).json('Logged out succesfully')
 }
 
-// exports.auth_checkIfLoggedIn = (req,res,next) => {
-
-
-
-//     loggedIn = req.user ? true : false
-//     return res.status(200).json({loggedIn: loggedIn})
-// }
-
-
-
-// exports.auth_checkIfLoggedIn = passport.authenticate(['jwt'], (err, user) =>{
-//     if (err) return res.status(400).json({message:'failed to authentificate', loggedIn: false})
-//     if (user) return res.status(200).json({message:'authentification succesful', loggedIn: true})
-//     else return res.status(200).json({loggedIn: false})
-// })
-
 exports.auth_checkIfLoggedIn = function(req, res, next) {
 
     // generate the authenticate method and pass the req/res
