@@ -4,7 +4,6 @@ if (process.env.NODE_ENV === 'development') {
 
 const express = require('express');
 const mongoose = require('mongoose');
-//const bodyParser = require("body-parser");
 const router = require('./routes/indexRoute');
 const compression = require('compression')
 const morgan = require('morgan');
@@ -36,18 +35,8 @@ app.use((req,res,next) => {
         }
     })
 });
-// app.use(session({
-//     secret: process.env.SESSION_SECRET,
-//     resave: false,
-//     saveUninitialized: false
-// }));
 app.use(passport.initialize());
-// app.use(passport.session());
 passport.use(jwtStrategy);
-//passport.use(googleStrategy);
-
-
-// app.use(passport.authenticate(['jwt', 'google'], { scope: ['profile'], session: false }));
 
 //Setting Routes
 app.use('/', router)
