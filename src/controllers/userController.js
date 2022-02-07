@@ -59,10 +59,14 @@ exports.user_update = [passport.authenticate(['jwt']),
     }
 
     if (req.body.pfpImage){
-     user.pfpLink = await uploadImage(req.body.pfpImage)
+      pfp = await uploadImage(req.body.pfpImage, req.user.pfpLink)
+      user.pfpLink = pfp.link
+      user.pfpDeleteHash = pfp.deletehash
     }
     if (req.body.headerImage){
-      user.headerLink = await uploadImage(req.body.headerImage)
+      header = await uploadImage(req.body.headerImage, req.user.headerLink)
+      user.headerLink = header.link
+      user.headerDeleteHash = header.deletehash
     }
     console.log(user)
     User.findByIdAndUpdate(req.user._id, user, {new: true}).then(newUser => {
